@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/210737__edtijo__night-soft-techno.wav-4e3d21dea7de6edc8ddcee0ffec0c5a6.sample"
+
+[deps]
+
+source_file="res://Assets/210737__edtijo__night-soft-techno.wav"
+dest_files=[ "res://.import/210737__edtijo__night-soft-techno.wav-4e3d21dea7de6edc8ddcee0ffec0c5a6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

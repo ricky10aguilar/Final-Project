@@ -1,0 +1,93 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Assets/enemy_1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/smoke.tres" type="Gradient" id=3]
+
+[sub_resource type="Curve" id=6]
+min_value = -360.0
+max_value = 360.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 94.7589 ), 265.932, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="GradientTexture" id=10]
+gradient = ExtResource( 3 )
+
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0.0126582, 0.622519 ), 0.0, -0.249802, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+render_priority = 1
+emission_shape = 3
+emission_point_count = 1
+flag_disable_z = true
+spread = 13.97
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 134.95
+angular_velocity = -39.66
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 37.93
+linear_accel_random = 0.22
+damping = 2.3
+damping_random = 0.02
+angle = 45.0
+angle_curve = SubResource( 7 )
+scale = 15.0
+scale_random = 0.34
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 10 )
+
+[node name="Enemy1" type="KinematicBody2D"]
+position = Vector2( 0, -100 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+fire_probability = 0.7
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 3.14159
+scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 2 )
+
+[node name="Particles2D" type="Particles2D" parent="Sprite"]
+show_behind_parent = true
+position = Vector2( -30, 50 )
+rotation = 1.57081
+scale = Vector2( 0.2, 0.2 )
+amount = 50
+explosiveness = 0.34
+randomness = 0.11
+local_coords = false
+process_material = SubResource( 5 )
+
+[node name="Particles2D2" type="Particles2D" parent="Sprite"]
+show_behind_parent = true
+position = Vector2( 30, 50 )
+rotation = 1.57081
+scale = Vector2( 0.2, 0.1 )
+amount = 50
+explosiveness = 0.37
+randomness = 0.2
+local_coords = false
+process_material = SubResource( 5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = -3.14159
+scale = Vector2( 0.45, 0.45 )
+polygon = PoolVector2Array( 49, -52.1, 49, -35, 50.8, -35, 58, -27.8, 58, -15.4, 63, -4.7, 63, 26, 43.8, 54, 17, 54, 17, 25.1, 11.7, 29, -12.6, 29, -18, 25.6, -18, 54, -38, 54, -39, 54, -44, 54, -44, 52.7, -63, 27.4, -63, -4.7, -58, -15.4, -58, -29, -55.7, -29, -49, -34, -49, -52.1, -46.1, -54, -26.9, -54, -24, -52.1, -24, -35, -19, -35, -16, -31, -3.8, -43, 3, -43, 3, -41, 15.3, -31.1, 19.2, -35, 24, -35, 24, -51.8, 26.2, -54, 46.1, -54 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+autostart = true
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
