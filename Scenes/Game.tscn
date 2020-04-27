@@ -108,7 +108,7 @@ font_data = ExtResource( 7 )
 [node name="Background" type="Node2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Background"]
-position = Vector2( -56.7552, -23.4849 )
+position = Vector2( -58.2275, -22.0126 )
 scale = Vector2( 1.11254, 0.979871 )
 texture = ExtResource( 2 )
 centered = false
