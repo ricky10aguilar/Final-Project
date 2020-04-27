@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Corona_Image.jpg" type="Texture" id=1]
+[ext_resource path="res://Scenes/Title.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/SceneChangeButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/QuitButton.tscn" type="PackedScene" id=5]
+
+[node name="MainScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -168.0
+margin_top = -48.0
+margin_right = 808.0
+margin_bottom = 612.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="." instance=ExtResource( 3 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -256.92
+margin_top = -307.565
+margin_right = 257.08
+margin_bottom = -137.565
+text = "Corona Game"
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.359
+anchor_top = 0.943
+anchor_right = 0.359
+anchor_bottom = 0.943
+margin_left = 46.384
+margin_top = -273.81
+margin_right = 254.384
+margin_bottom = -223.81
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayButton" parent="Menu" instance=ExtResource( 4 )]
+margin_right = 208.0
+margin_bottom = 26.0
+text = "Play"
+next_scene_path = "res://Scenes/Game.tscn"
+
+[node name="QuitButton" parent="Menu" instance=ExtResource( 5 )]
+margin_top = 30.0
+margin_right = 208.0
+margin_bottom = 50.0
