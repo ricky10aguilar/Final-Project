@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 export var speed = 500
-onready var Explosion = load("res://Scenes/Explosion.tscn")
+onready var Splash = load("res://Scenes/Splash.tscn")
 onready var Player = get_node("/root/Game/Player")
 
 func _ready():
@@ -11,10 +11,10 @@ func _ready():
 func _physics_process(delta):
 	var colliding = get_colliding_bodies()
 	for c in colliding:
-		var explosion = Explosion.instance()
-		explosion.position = position
-		explosion.get_node("Sprite").playing = true
-		get_node("/root/Game/Explosions").add_child(explosion)
+		var splash = Splash.instance()
+		splash.position = position
+		splash.get_node("Sprite").playing = true
+		get_node("/root/Game/Splash").add_child(splash)
 		if c.get_parent().name == "Enemies":
 			Player.change_score(c.score)
 			c.die()

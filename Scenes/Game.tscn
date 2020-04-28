@@ -84,7 +84,7 @@ script = ExtResource( 3 )
 [node name="Timer" type="Timer" parent="Enemies"]
 autostart = true
 
-[node name="Explosions" type="Node2D" parent="."]
+[node name="Splash" type="Node2D" parent="."]
 
 [node name="HUD" type="Node2D" parent="."]
 script = ExtResource( 8 )
