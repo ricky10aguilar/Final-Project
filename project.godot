@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Space Shooter"
-run/main_scene="res://Scenes/Game.tscn"
+config/name="Final Project (We Need a name)"
+run/main_scene="res://Scenes/MainScreen.tscn"
 config/icon="res://icon.png"
 
 [display]
