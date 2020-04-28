@@ -4,24 +4,24 @@
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Assets/smoke.tres" type="Gradient" id=3]
 
-[sub_resource type="Curve" id=6]
+[sub_resource type="Curve" id=1]
 min_value = -360.0
 max_value = 360.0
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 94.7589 ), 265.932, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=7]
-curve = SubResource( 6 )
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
 
-[sub_resource type="GradientTexture" id=10]
+[sub_resource type="GradientTexture" id=3]
 gradient = ExtResource( 3 )
 
-[sub_resource type="Curve" id=8]
+[sub_resource type="Curve" id=4]
 _data = [ Vector2( 0.0126582, 0.622519 ), 0.0, -0.249802, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=9]
-curve = SubResource( 8 )
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=5]
+[sub_resource type="ParticlesMaterial" id=6]
 render_priority = 1
 emission_shape = 3
 emission_point_count = 1
@@ -37,11 +37,11 @@ linear_accel_random = 0.22
 damping = 2.3
 damping_random = 0.02
 angle = 45.0
-angle_curve = SubResource( 7 )
+angle_curve = SubResource( 2 )
 scale = 15.0
 scale_random = 0.34
-scale_curve = SubResource( 9 )
-color_ramp = SubResource( 10 )
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
 
 [node name="Enemy2" type="KinematicBody2D"]
 position = Vector2( 0, -100 )
@@ -69,7 +69,7 @@ speed_scale = 1.69
 explosiveness = 0.55
 randomness = 0.22
 local_coords = false
-process_material = SubResource( 5 )
+process_material = SubResource( 6 )
 
 [node name="Particles2D2" type="Particles2D" parent="Sprite"]
 show_behind_parent = true
@@ -80,7 +80,7 @@ amount = 50
 explosiveness = 0.56
 randomness = 0.21
 local_coords = false
-process_material = SubResource( 5 )
+process_material = SubResource( 6 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7
