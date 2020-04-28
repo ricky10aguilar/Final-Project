@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/497274__poemabeats__spoon-against-pan.wav-b9bf7cf15f014df60c0ec68c0f960f7c.sample"
+
+[deps]
+
+source_file="res://Assets/497274__poemabeats__spoon-against-pan.wav"
+dest_files=[ "res://.import/497274__poemabeats__spoon-against-pan.wav-b9bf7cf15f014df60c0ec68c0f960f7c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
