@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Final Project (We Need a name)"
+config/name="Captian Corona"
 run/main_scene="res://Scenes/MainScreen.tscn"
 config/icon="res://icon.png"
 
